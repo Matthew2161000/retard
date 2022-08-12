@@ -1,7 +1,10 @@
 from ast import Try
+from decouple import config
 from distutils.log import error
 import discord, os, sys
 from discord.ext import commands
+
+TOKEN = config('KEY')
 
 intents = discord.Intents.default()
 intents.members = True
@@ -50,4 +53,4 @@ async def on_ready():
     print(f"Client ready and awake in {len(client.guilds)} servers")
 
 
-client.run('ODE4NDIxMTEwODQ4NDg3NDI0.Gw8vvY.qNKB1KVbIL2z0NRFeaqiCRbPlS2WFzUBJbfPo8')
+client.run(TOKEN)
